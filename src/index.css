@@ -1,0 +1,70 @@
+:root {
+  --bg: #f3efe6; --card: #fffdf8; --ink: #1d1a16; --ink-2: #5f584d; --line: #e2dccf;
+  --brand: #14532d; --brand-2: #d97706; --good: #15803d; --ok: #b45309; --low: #b91c1c;
+  font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--ink); background: var(--bg); line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; } body { margin: 0; } a { color: var(--brand); }
+.page { max-width: 1080px; margin: 0 auto; padding: 0 22px 48px; }
+.top { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; font-size: 14px; font-weight: 600; }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+.logo { width: 32px; height: 32px; border-radius: 9px; background: var(--brand); color: #fff; display: grid; place-items: center; font-family: 'Fraunces', Georgia, serif; font-size: 17px; }
+.logo em { color: #fbbf24; font-style: italic; }
+.hero { padding: 26px 0 26px; max-width: 760px; }
+h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(34px, 5.6vw, 58px); line-height: 1.04; letter-spacing: -.02em; margin: 0 0 16px; }
+h1 span { color: var(--brand); font-style: italic; }
+.hero p { font-size: 18px; color: var(--ink-2); margin: 0 0 8px; } .hero .note { font-size: 14.5px; }
+.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: grid; gap: 8px; align-content: start; }
+.field label { font-weight: 700; font-size: 14px; }
+.label-row { display: flex; justify-content: space-between; align-items: center; }
+.upload { font-weight: 600 !important; font-size: 13px !important; color: var(--brand); border: 1px dashed var(--brand); border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+.upload input { display: none; }
+textarea { width: 100%; font: inherit; font-size: 14.5px; line-height: 1.5; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; resize: vertical; }
+textarea:focus { outline: 2px solid var(--brand); outline-offset: 1px; }
+.status { margin: 0; font-size: 13px; color: var(--ink-2); }
+.buttons { grid-column: 1 / -1; display: flex; justify-content: flex-end; gap: 12px; align-items: center; }
+.go { font: inherit; font-weight: 700; font-size: 16px; background: var(--brand); color: #fff; border: 0; border-radius: 12px; padding: 12px 26px; cursor: pointer; }
+.go:disabled { opacity: .4; cursor: not-allowed; }
+.link { font: inherit; background: none; border: 0; color: var(--brand); font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.report { margin-top: 30px; display: grid; gap: 16px; scroll-margin-top: 16px; }
+.summary { display: grid; grid-template-columns: auto 1fr auto; gap: 26px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.ring { --c: var(--low); width: 140px; height: 140px; border-radius: 50%; display: grid; place-content: center; text-align: center;
+  background: radial-gradient(closest-side, var(--card) 78%, transparent 79%), conic-gradient(var(--c) calc(var(--v) * 3.6deg), #ebe5d8 0); }
+.ring.good { --c: var(--good); } .ring.ok { --c: var(--ok); }
+.ring strong { font-family: 'Fraunces', Georgia, serif; font-size: 44px; line-height: 1; color: var(--c); } .ring span { font-size: 13px; color: var(--ink-2); }
+.bars { display: grid; gap: 12px; }
+.bar-head { display: flex; justify-content: space-between; font-size: 14px; }
+.track { height: 8px; background: #ebe5d8; border-radius: 99px; overflow: hidden; margin: 4px 0 2px; }
+.track div { height: 100%; background: var(--brand); border-radius: 99px; transition: width .6s ease; }
+.bar small { color: var(--ink-2); font-size: 12px; }
+.copy { align-self: start; font: inherit; font-size: 13px; font-weight: 600; background: none; border: 1px solid var(--line); border-radius: 10px; padding: 7px 12px; cursor: pointer; color: var(--ink); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+.card h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 22px; margin: 0 0 12px; }
+.todo { border-left: 5px solid var(--brand-2); } .todo ol { margin: 0; padding-left: 20px; } .todo li { margin: 6px 0; }
+.two { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; }
+.group h3, .kw { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-2); margin: 14px 0 6px; }
+.chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { font-size: 13.5px; padding: 4px 10px; border-radius: 999px; border: 1px solid; }
+.chips .have { background: #ecfdf3; color: var(--good); border-color: #bbf7d0; }
+.chips .miss { background: #fef2f2; color: var(--low); border-color: #fecaca; }
+.chips sup { font-size: 9px; margin-left: 3px; text-transform: uppercase; }
+.chips.plain li { background: #f6f1e6; border-color: var(--line); color: var(--ink); }
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.checks li { display: grid; grid-template-columns: 24px 1fr; gap: 8px; }
+.checks li > span { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 800; color: #fff; }
+.checks .pass > span { background: var(--good); } .checks .fail > span { background: var(--ok); }
+.checks b { display: block; font-size: 14.5px; } .checks small { color: var(--ink-2); font-size: 13px; }
+.tips { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.tips q { display: block; font-style: italic; } .tips ul { margin: 4px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; }
+.muted { color: var(--ink-2); }
+.how { margin-top: 52px; } .how h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 28px; margin: 0 0 14px; }
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.how-grid div { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+.how-grid p { margin: 6px 0 0; color: var(--ink-2); font-size: 14.5px; }
+.foot { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-2); }
+@media (max-width: 800px) {
+  .inputs, .two, .how-grid { grid-template-columns: 1fr; }
+  .summary { grid-template-columns: 1fr; justify-items: center; } .bars { width: 100%; }
+  .buttons { justify-content: space-between; }
+}
